@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة مالك الرقمية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2 family=Cairo:wght@400;600;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="marquee-container">
+        <div class="marquee-text">
+            ✨ قال رسول الله ﷺ: «من سلك طريقًا يلتمس فيه علمًا سهل الله له به طريقًا إلى الجنة» • قال الإمام مالك: «إن هذا العلم دين فانظروا عمن تأخذون دينكم» • منظومة ابن باديس الأكاديمية رفعة وبناء بالمسطرة والقلم ✨
+        </div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <button class="theme-toggle" id="themeBtn"><i class="fa-solid fa-moon"></i></button>
+            <img src="logo.jpg" alt="شعار الكلية" class="college-logo" onerror="this.src='https://via.placeholder.com/85/2D5A27/FFF?text=MALIK';">
+            <h1>منصَّة مَـالڪ التَّعلِيميَّة</h1>
+            <p>منظومة ابن باديس الأكاديمية</p>
+        </header>
+
+        <div class="datetime-widget" id="dateTimeWidget">
+            <div><i class="fa-solid fa-calendar-day"></i> <span id="currentDateMiladi">⏳ جاري التحميل...</span></div>
+            <div><i class="fa-solid fa-moon"></i> <span id="currentDateHijri">⏳ جاري الحساب...</span></div>
+        </div>
+
+        <div class="student-profile-card">
+            <div class="profile-header-info">
+                <div class="student-name"><i class="fa-solid fa-graduation-cap"></i> <span id="profileStudentName">طالب علم</span></div>
+                <div class="student-rank-badge" id="studentRankBadge">📑 مُلتَمِس العلم</div>
+            </div>
+            <div class="profile-stats-grid">
+                <div class="stat-box">
+                    <span>رصيد النقاط الإجمالي</span>
+                    <strong id="totalPointsDisplay">0</strong>
+                </div>
+                <div class="stat-box">
+                    <span>أيام الحضور المتوالي</span>
+                    <strong id="attendanceDaysDisplay">1</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="doa-card">
+            <div class="doa-text" id="doaTextDisplay">اللّهم إني أسألك علماً نافعاً، ورزقاً طيباً، وعملاً متقبلاً.</div>
+            <div class="doa-actions">
+                <button class="doa-btn" id="randomDoaBtn"><i class="fa-solid fa-shuffle"></i> دعاء عشوائي</button>
+                <button class="doa-btn" id="copyDoaBtn"><i class="fa-solid fa-copy"></i> نسخ الدعاء</button>
+            </div>
+        </div>
+
+        <div class="guide-trigger" id="openGuideBtn">
+            <div class="guide-title">
+                <i class="fa-solid fa-compass"></i>
+                <div>
+                    <h2>الدليل الشامل للكلية والمنظومة</h2>
+                    <p>تعرف على كلية الإمام مالك ونظام ابن باديس</p>
+                </div>
+            </div>
+            <i class="fa-solid fa-circle-info" style="color: var(--royal-gold); font-size: 18px;"></i>
+        </div>
+
+        <div class="tabs-container">
+            <button class="tab-btn active" data-tab="college-channels">🏛️ قنوات الكلية</button>
+            <button class="tab-btn" data-tab="daawah-channels">✨ منابر دعوية</button>
+            <button class="tab-btn" data-tab="competition-tab">🏆 ميزات وعبادة</button>
+            <button class="tab-btn" data-tab="my-notebook">📌 كُناشتي</button>
+        </div>
+
+        <div id="college-channels" class="tab-content active">
+            <a href="https://t.me/MALIKIST_0" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+                    <div class="card-info">
+                        <h3>قناة الإعلانات الخاصة بالكلية</h3>
+                        <p>المستجدات والقرارات الإدارية الرسمية</p>
+                        <span class="badge">رسمي</span>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+            <a href="https://t.me/KONASHA_42" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="card-info">
+                        <h3>قناة كناشة المتفقه</h3>
+                        <p>شروح المتون الفقهية والمدونات المالكية</p>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+            <a href="https://t.me/atafaseelat42" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-book-bookmark"></i></div>
+                    <div class="card-info">
+                        <h3>قناة أصول الفقه</h3>
+                        <p>قواعد الاستنباط والأدلة الشرعية</p>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+            <a href="https://t.me/tasheelalbyan_42" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-scroll"></i></div>
+                    <div class="card-info">
+                        <h3>قناة تسهيل البيان</h3>
+                        <p>المادة العلمية المنسقة والمشروحة</p>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+            <a href="https://t.me/AQIDIST_3" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="card-info">
+                        <h3>قناة العقيدة</h3>
+                        <p>دراسة متون العقيدة الإسلامية الصافية</p>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+            <a href="https://t.me/NAHWIST_2" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-pen-nib"></i></div>
+                    <div class="card-info">
+                        <h3>قناة النحو</h3>
+                        <p>علوم الآلة وقواعد اللسان العربي</p>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+            <a href="https://t.me/MALIKBOOKS" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-book-open"></i></div>
+                    <div class="card-info">
+                        <h3>قناة مكتبة الإمام مالك</h3>
+                        <p>تحميل ومطالعة المصادر والكتب المقررة</p>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+        </div>
+
+        <div id="daawah-channels" class="tab-content">
+            <a href="https://t.me/AletQan24" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-bookmark"></i></div>
+                    <div class="card-info">
+                        <h3>امتحان إجازة القرآن الكريم</h3>
+                        <p>متابعة اختبارات التجويد والإجازات القرآنية</p>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+            <a href="https://t.me/TAWBAH_03" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-heart"></i></div>
+                    <div class="card-info">
+                        <h3>قناة تائبون وتائبات</h3>
+                        <p>مواعظ إيمانية ورقائق لتزكية النفوس</p>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+            <a href="https://t.me/QALBSLEM" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+                    <div class="card-info">
+                        <h3>قناة توعية دينية</h3>
+                        <p>إرشادات وفتاوى تهم المسلم في دينه</p>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+            <a href="https://t.me/M_AX_S42" class="card" target="_blank">
+                <div class="card-right">
+                    <div class="icon-box"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <div class="card-info">
+                        <h3>قناة دعم رشد السلفية</h3>
+                        <p>شبكة ونشر المحتوى العلمي الموثوق</p>
+                    </div>
+                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-left"></i></div>
+            </a>
+        </div>
+
+        <div id="competition-tab" class="tab-content">
+            <div class="tools-card-box">
+                <h3><i class="fa-solid fa-list-check"></i> المهام الشرعية اليومية (+10 نقاط)</h3>
+                <div id="dailyTasksContainer">
+                    <div class="task-item">
+                        <div class="task-title">📖 قراءة الحزب القرآني اليومي</div>
+                        <button class="task-btn" data-index="0">أنجزت</button>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-title">🕌 المحافظة على ورد أذكار الصباح والمساء</div>
+                        <button class="task-btn" data-index="1">أنجزت</button>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-title">📜 حفظ حديث أو تقييد فائدة منهجية جديدة</div>
+                        <button class="task-btn" data-index="2">أنجزت</button>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-title">📚 مراجعة وتحضير مادة من مقررات الكلية</div>
+                        <button class="task-btn" data-index="3">أنجزت</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-card-box">
+                <div class="tasbeeh-header-row">
+                    <h3><i class="fa-solid fa-calculator"></i> المسبحة والذكر الرقمي</h3>
+                    <select id="tasbeehGoal" class="goal-select">
+                        <option value="100">الهدف: 100</option>
+                        <option value="500">الهدف: 500</option>
+                        <option value="1000">الهدف: 1000</option>
+                    </select>
+                </div>
+                <div class="tasbeeh-wrapper">
+                    <div class="tasbeeh-counter" id="tasbeehDisplay">000</div>
+                    <div class="tasbeeh-controls">
+                        <button class="tasbeeh-btn-main" id="tasbeehTapBtn"><i class="fa-solid fa-fingerprint"></i></button>
+                        <button class="tasbeeh-btn-reset" id="tasbeehResetBtn"><i class="fa-solid fa-rotate-left"></i> تصفير</button>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="tasbeehProgressBar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-card-box">
+                <h3><i class="fa-solid fa-hourglass-half"></i> مؤقت المذاكرة المركزة (بومودورو شرعي)</h3>
+                <div class="pomodoro-wrapper">
+                    <div class="pomodoro-time" id="pomodoroDisplay">25:00</div>
+                    <div class="pomodoro-status" id="pomodoroStatus">📖 وقت الجد والحفظ والتركيز</div>
+                    <div>
+                        <button class="pomodoro-btn" id="pomodoroStartBtn">بدء المؤقت</button>
+                        <button class="pomodoro-btn" id="pomodoroResetBtn" style="background:#7F8C8D;">إعادة ضبط</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="my-notebook" class="tab-content">
+            <div class="notebook-section">
+                <h3><i class="fa-solid fa-feather-pointed"></i> تقييد فوائد العلم</h3>
+                <select id="noteType" class="note-select">
+                    <option value="📜 فائدة فقهية">📜 فائدة فقهية</option>
+                    <option value="🛡️ فائدة في العقيدة">🛡️ فائدة في العقيدة</option>
+                    <option value="✍️ علوم اللسان واللغة">✍️ علوم اللسان واللغة</option>
+                    <option value="✨ فائدة عامة">✨ فائدة عامة</option>
+                </select>
+                <textarea id="noteText" class="note-textarea" placeholder="اكتب الدرر أو الفوائد العلمية التي التقطتها من مجالس الشيوخ هنا..."></textarea>
+                <button class="note-btn" id="saveNoteBtn">حفظ الفائدة في الذاكرة</button>
+            </div>
+            <div class="notes-list" id="notesStorageList"></div>
+        </div>
+    </div>
+
+    <div id="guideModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeGuideBtn">&times;</span>
+            <div class="modal-h">الدليل المعرفي للكلية</div>
+            <div class="modal-body">
+                <h4>🏛️ نبذة عن الكلية وتبعيتها</h4>
+                <p>كلية الإمام مالك هي مؤسسة تعليمية دينية إسلامية ليبية مقرها في العاصمة طرابلس ولها عدة فروع، وتتبع إدارياً الهيئة العامة للأوقاف والشؤون الإسلامية في ليبيا.</p>
+                
+                <h4>📜 التأسيس والتفعيل</h4>
+                <p>تأسست بقرار سنة 2011م تحت اسم الكلية السلفية العالية للإمامة والخطابة، وجرى تفعيلها رسمياً وبصورة حقيقية من قبل الهيئة العامة للأوقاف سنة 2022م (1443هـ) لتبدأ مسيرتها المباركة.</p>
+
+                <h4>📊 الأقسام العلمية</h4>
+                <p><strong>🛡️ الدعوة وأصول الدين:</strong> تخريج دعاة على كفاءة ومنهجية واضحة لمواجهة التحديات المعاصرة.</p>
+                <p style="margin-top:5px;"><strong>📜 علوم الشريعة:</strong> إعداد فقهاء يجمعون بين الأصالة والمعاصرة وفق المذهب المالكي المعتمد.</p>
+                <p style="margin-top:5px;"><strong>📖 علوم القراءات:</strong> إعداد معلمين مجازين في القراءات والقرآن الكريم لسد احتياجات المساجد والمراكز.</p>
+
+                <h4>📍 فروع الكلية</h4>
+                <div class="branches-grid">
+                    <div class="branch-item"><i class="fa-solid fa-location-dot"></i> طرابلس (تاجوراء، النوفليين، النجيلة، طريق المشتل، السراج)</div>
+                    <div class="branch-item"><i class="fa-solid fa-location-dot"></i> فروع المدن: (الزاوية، مصراتة، ترهونة، الخمس، العجيلات، الزنتان، البيضاء)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        تطوير وتشغيل المنظومة رقمياً بواسطة Nexus Core Systems © 2026
+    </footer>
+
+    <script src="js/profile.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/pomodoro.js"></script>
+    <script src="js/notebook.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
